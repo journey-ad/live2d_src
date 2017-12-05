@@ -75,6 +75,8 @@ function init(modelurl) {
   let bottom = -ratio;
   let top = ratio;
 
+  window.Live2D.captureFrame = false;
+
   viewMatrix = new L2DViewMatrix();
 
 
@@ -120,6 +122,14 @@ function startDraw() {
         window.mozRequestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
         window.msRequestAnimationFrame;
+
+        if (window.Live2D.captureFrame) {
+            window.Live2D.captureFrame = false;
+            var link = document.createElement('a');
+            link.href = canvas.toDataURL();
+            link.download = window.Live2D.captureName || 'live2d.png';
+            link.click();
+        }
 
       requestAnimationFrame(tick, canvas);
     })();
