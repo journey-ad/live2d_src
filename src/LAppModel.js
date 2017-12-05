@@ -1,4 +1,4 @@
-import {L2DBaseModel, L2DEyeBlink} from "./lib/Live2DFramework"
+import {Live2DFramework, L2DBaseModel, L2DEyeBlink} from "./lib/Live2DFramework"
 import ModelSettingJson from "./lib/ModelSettingJson"
 import LAppDefine from "./LAppDefine"
 import MatrixStack from "./lib/MatrixStack"
