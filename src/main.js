@@ -126,6 +126,8 @@ function startDraw() {
         if (window.Live2D.captureFrame) {
             window.Live2D.captureFrame = false;
             var link = document.createElement('a');
+            document.body.appendChild(link);
+            link.setAttribute("type", "hidden");
             link.href = canvas.toDataURL();
             link.download = window.Live2D.captureName || 'live2d.png';
             link.click();
