@@ -40,8 +40,15 @@ LAppModel.prototype.load = function(gl, modelSettingPath, callback)
             for (var i = 0; i < thisRef.modelSetting.getTextureNum(); i++)
             {
                 
+                if( /^https?:\/\/|^\/\//i.test(thisRef.modelSetting.getTextureFile(i)) )
+                {
+                    var texPaths = thisRef.modelSetting.getTextureFile(i);
+                }
+                else
+                {
                 var texPaths = thisRef.modelHomeDir + 
                     thisRef.modelSetting.getTextureFile(i);
+                }
                 
                 thisRef.loadTexture(i, texPaths, function() {
                     
