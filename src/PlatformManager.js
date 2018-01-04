@@ -73,9 +73,9 @@ PlatformManager.prototype.loadTexture     = function(model/*ALive2DModel*/, no/*
 { 
     // load textures
     var loadedImage = new Image();
+    loadedImage.crossOrigin = 'Anonymous';
     loadedImage.src = path;
-    loadedImage.crossOrigin = 'Anonymous';    
-        
+    
     var thisRef = this;
     loadedImage.onload = function() {
         // create texture
